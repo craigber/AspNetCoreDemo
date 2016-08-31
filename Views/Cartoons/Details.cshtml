@@ -1,0 +1,42 @@
+@model AspNetCoreDemo2.Models.Cartoon
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cartoon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Network)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Network)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Seasons)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Seasons)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WhenDebuted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WhenDebuted)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -8,9 +8,10 @@ using AspNetCoreDemo2.Data;
 namespace AspNetCoreDemo2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160831143755_Cartoon-Network-Link")]
+    partial class CartoonNetworkLink
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -85,6 +86,8 @@ namespace AspNetCoreDemo2.Data.Migrations
                     b.Property<DateTime>("WhenDebuted");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("NetworkId");
 
                     b.HasIndex("StudioId");
 
@@ -228,6 +231,11 @@ namespace AspNetCoreDemo2.Data.Migrations
 
             modelBuilder.Entity("AspNetCoreDemo2.Models.Cartoon", b =>
                 {
+                    b.HasOne("AspNetCoreDemo2.Models.Network", "Network")
+                        .WithMany()
+                        .HasForeignKey("NetworkId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("AspNetCoreDemo2.Models.Studio", "Studio")
                         .WithMany("Cartoons")
                         .HasForeignKey("StudioId")

@@ -10,6 +10,9 @@ namespace AspNetCoreDemo2.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Studio> Studios { get; set; }
+        public DbSet<Cartoon> Cartoons { get; set; }
+        public DbSet<Network> Networks { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

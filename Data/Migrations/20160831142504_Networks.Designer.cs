@@ -8,9 +8,10 @@ using AspNetCoreDemo2.Data;
 namespace AspNetCoreDemo2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160831142504_Networks")]
+    partial class Networks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -73,6 +74,8 @@ namespace AspNetCoreDemo2.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasAnnotation("MaxLength", 200);
+
+                    b.Property<string>("Network");
 
                     b.Property<int>("NetworkId");
 

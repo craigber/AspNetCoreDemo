@@ -35,10 +35,20 @@ textarea {
     padding-left: 0.5em;
 }
 
+.navbar-brand {
+    color: yellow!important;
+}
+
+.img-home 
+
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"]
 {
     width: 100%;
+}
+
+.home-title {
+    font-size: 48pt;
 }
 
 /* Hide/rearrange for smaller screens */

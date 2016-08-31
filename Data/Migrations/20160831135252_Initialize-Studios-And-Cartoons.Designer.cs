@@ -8,9 +8,10 @@ using AspNetCoreDemo2.Data;
 namespace AspNetCoreDemo2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160831135252_Initialize-Studios-And-Cartoons")]
+    partial class InitializeStudiosAndCartoons
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -74,13 +75,11 @@ namespace AspNetCoreDemo2.Data.Migrations
                         .IsRequired()
                         .HasAnnotation("MaxLength", 200);
 
-                    b.Property<int>("NetworkId");
+                    b.Property<string>("Network");
 
                     b.Property<int>("Seasons");
 
                     b.Property<int>("StudioId");
-
-                    b.Property<string>("Trivia");
 
                     b.Property<DateTime>("WhenDebuted");
 
@@ -89,20 +88,6 @@ namespace AspNetCoreDemo2.Data.Migrations
                     b.HasIndex("StudioId");
 
                     b.ToTable("Cartoons");
-                });
-
-            modelBuilder.Entity("AspNetCoreDemo2.Models.Network", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasAnnotation("MaxLength", 50);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Networks");
                 });
 
             modelBuilder.Entity("AspNetCoreDemo2.Models.Studio", b =>
