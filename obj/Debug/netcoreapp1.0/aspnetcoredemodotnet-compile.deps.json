@@ -14,7 +14,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v1.0": {
-      "aspnetcoredemo/1.0.0": {
+      "AspNetCoreDemo/1.0.0": {
         "dependencies": {
           "Microsoft.NETCore.App": "1.0.0",
           "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
@@ -37,7 +37,7 @@
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
         },
         "compile": {
-          "aspnetcoredemo.dll": {}
+          "AspNetCoreDemo.dll": {}
         }
       },
       "Libuv/1.9.0": {
@@ -2873,7 +2873,7 @@
       }
     },
     ".NETCoreApp,Version=v1.0/": {
-      "aspnetcoredemo/1.0.0": {
+      "AspNetCoreDemo/1.0.0": {
         "dependencies": {
           "Microsoft.NETCore.App": "1.0.0",
           "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
@@ -2896,7 +2896,7 @@
           "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
         },
         "runtime": {
-          "aspnetcoredemo.dll": {}
+          "AspNetCoreDemo.dll": {}
         }
       },
       "Libuv/1.9.0": {
@@ -5631,7 +5631,7 @@
     }
   },
   "libraries": {
-    "aspnetcoredemo/1.0.0": {
+    "AspNetCoreDemo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

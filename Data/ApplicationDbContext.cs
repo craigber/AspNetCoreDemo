@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using AspNetCoreDemo2.Models;
+using Cartoonalogue.Models;
 
-namespace AspNetCoreDemo2.Data
+namespace Cartoonalogue.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

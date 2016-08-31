@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetCoreDemo2.Models.ManageViewModels
+namespace Cartoonalogue.Models.ManageViewModels
 {
     public class RemoveLoginViewModel
     {

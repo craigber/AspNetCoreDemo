@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using AspNetCoreDemo2.Data;
-using AspNetCoreDemo2.Models;
+using Cartoonalogue.Data;
+using Cartoonalogue.Models;
 
-namespace AspNetCoreDemo2.Controllers
+namespace Cartoonalogue.Controllers
 {
     public class NetworksController : Controller
     {

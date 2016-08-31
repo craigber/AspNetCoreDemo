@@ -1,15 +1,13 @@
-@model AspNetCoreDemo2.Models.Cartoon
+@model Cartoonalogue.Models.Cartoon
 
 @{
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Delete Cartoon</h2>
+<hr />
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Cartoon</h4>
-    <hr />
+<div class="well">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -18,10 +16,10 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Network)
+            @Html.DisplayNameFor(model => model.WhenDebuted)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Network)
+            @Html.DisplayFor(model => model.WhenDebuted)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Seasons)
@@ -30,17 +28,29 @@
             @Html.DisplayFor(model => model.Seasons)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.WhenDebuted)
+            Studio
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.WhenDebuted)
+            @Html.DisplayFor(model => model.Studio.Name)
+        </dd>
+        <dt>
+            Network
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Network.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trivia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trivia)
         </dd>
     </dl>
-    
-    <form asp-action="Delete">
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            <a asp-action="Index">Back to List</a>
-        </div>
-    </form>
 </div>
+    
+<form asp-action="Delete">
+    <div class="form-actions no-color">
+        <button type="submit" class="btn btn-danger"><i class="fa fa-close"></i> Delete</button>
+        <a asp-action="Index" class="btn btn-default">Cancel</a>
+    </div>
+</form>

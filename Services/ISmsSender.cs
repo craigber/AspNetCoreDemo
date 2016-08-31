@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetCoreDemo2.Services
+namespace Cartoonalogue.Services
 {
     public interface ISmsSender
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
-namespace AspNetCoreDemo2.Models
+namespace Cartoonalogue.Models
 {
     public class Network
     {

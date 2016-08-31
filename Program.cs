@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace AspNetCoreDemo2
+namespace Cartoonalogue
 {
     public class Program
     {

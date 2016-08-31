@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using AspNetCoreDemo2.Models;
-using AspNetCoreDemo2.Models.AccountViewModels;
-using AspNetCoreDemo2.Services;
+using Cartoonalogue.Models;
+using Cartoonalogue.Models.AccountViewModels;
+using Cartoonalogue.Services;
 
-namespace AspNetCoreDemo2.Controllers
+namespace Cartoonalogue.Controllers
 {
     [Authorize]
     public class AccountController : Controller

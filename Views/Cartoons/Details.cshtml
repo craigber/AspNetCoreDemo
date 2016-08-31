@@ -1,14 +1,19 @@
-@model AspNetCoreDemo2.Models.Cartoon
+@model Cartoonalogue.Models.Cartoon
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Cartoon Details</h2>
 
-<div>
-    <h4>Cartoon</h4>
-    <hr />
+<div class="row" style="padding-left: 20px;">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-default"><i class="fa fa-remove"></i> Delete</a>
+</div>
+
+<hr />
+
+<div class="well">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -17,10 +22,10 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Network)
+            @Html.DisplayNameFor(model => model.WhenDebuted)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Network)
+            @Html.DisplayFor(model => model.WhenDebuted)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Seasons)
@@ -29,14 +34,22 @@
             @Html.DisplayFor(model => model.Seasons)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.WhenDebuted)
+            Studio
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.WhenDebuted)
+            @Html.DisplayFor(model => model.Studio.Name)
+        </dd>
+        <dt>
+            Network
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Network.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Trivia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trivia)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>

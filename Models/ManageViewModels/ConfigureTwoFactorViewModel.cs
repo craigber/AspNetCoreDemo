@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace AspNetCoreDemo2.Models.ManageViewModels
+namespace Cartoonalogue.Models.ManageViewModels
 {
     public class ConfigureTwoFactorViewModel
     {

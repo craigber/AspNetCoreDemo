@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using AspNetCoreDemo2.Data;
-using AspNetCoreDemo2.Models;
-using AspNetCoreDemo2.Services;
+using Cartoonalogue.Data;
+using Cartoonalogue.Models;
+using Cartoonalogue.Services;
 
-namespace AspNetCoreDemo2
+namespace Cartoonalogue
 {
     public class Startup
     {

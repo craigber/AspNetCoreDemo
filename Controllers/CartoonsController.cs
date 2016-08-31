@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using AspNetCoreDemo2.Data;
-using AspNetCoreDemo2.Models;
+using Cartoonalogue.Data;
+using Cartoonalogue.Models;
 
-namespace AspNetCoreDemo2.Controllers
+namespace Cartoonalogue.Controllers
 {
     public class CartoonsController : Controller
     {
@@ -34,7 +34,7 @@ namespace AspNetCoreDemo2.Controllers
                 return NotFound();
             }
 
-            var cartoon = await _context.Cartoons.SingleOrDefaultAsync(m => m.Id == id);
+            var cartoon = await _context.Cartoons.Include(c => c.Network).Include(c => c.Studio).SingleOrDefaultAsync(m => m.Id == id);
             if (cartoon == null)
             {
                 return NotFound();
@@ -46,8 +46,8 @@ namespace AspNetCoreDemo2.Controllers
         // GET: Cartoons/Create
         public IActionResult Create()
         {
-            ViewData["StudioId"] = new SelectList(_context.Studios, "Id", "Name");
-            ViewData["NetworkId"] = new SelectList(_context.Networks, "Id", "Name");
+            ViewData["StudioId"] = new SelectList(_context.Studios.OrderBy(s => s.Name), "Id", "Name");
+            ViewData["NetworkId"] = new SelectList(_context.Networks.OrderBy(s => s.Name), "Id", "Name");
             return View();
         }
 
@@ -64,8 +64,8 @@ namespace AspNetCoreDemo2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["StudioId"] = new SelectList(_context.Studios, "Id", "Name", cartoon.StudioId);
-            ViewData["NetworkId"] = new SelectList(_context.Networks, "Id", "Name", cartoon.NetworkId);
+            ViewData["StudioId"] = new SelectList(_context.Studios.OrderBy(s => s.Name), "Id", "Name");
+            ViewData["NetworkId"] = new SelectList(_context.Networks.OrderBy(s => s.Name), "Id", "Name");
             return View(cartoon);
         }
 
@@ -82,8 +82,8 @@ namespace AspNetCoreDemo2.Controllers
             {
                 return NotFound();
             }
-            ViewData["NetworkId"] = new SelectList(_context.Networks, "Id", "Name", cartoon.NetworkId);
-            ViewData["StudioId"] = new SelectList(_context.Studios, "Id", "Name", cartoon.StudioId);
+            ViewData["StudioId"] = new SelectList(_context.Studios.OrderBy(s => s.Name), "Id", "Name");
+            ViewData["NetworkId"] = new SelectList(_context.Networks.OrderBy(s => s.Name), "Id", "Name");
             return View(cartoon);
         }
 
@@ -119,8 +119,8 @@ namespace AspNetCoreDemo2.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["StudioId"] = new SelectList(_context.Studios, "Id", "Name", cartoon.StudioId);
-            ViewData["NetworkId"] = new SelectList(_context.Networks, "Id", "Name", cartoon.NetworkId);
+            ViewData["StudioId"] = new SelectList(_context.Studios.OrderBy(s => s.Name), "Id", "Name");
+            ViewData["NetworkId"] = new SelectList(_context.Networks.OrderBy(s => s.Name), "Id", "Name");
             return View(cartoon);
         }
 
@@ -132,7 +132,7 @@ namespace AspNetCoreDemo2.Controllers
                 return NotFound();
             }
 
-            var cartoon = await _context.Cartoons.SingleOrDefaultAsync(m => m.Id == id);
+            var cartoon = await _context.Cartoons.Include(c => c.Network).Include(c => c.Studio).FirstOrDefaultAsync(m => m.Id == id);
             if (cartoon == null)
             {
                 return NotFound();

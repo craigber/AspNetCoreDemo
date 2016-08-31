@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using AspNetCoreDemo2.Data;
+using Cartoonalogue.Data;
 
-namespace AspNetCoreDemo2.Data.Migrations
+namespace Cartoonalogue.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -16,7 +16,7 @@ namespace AspNetCoreDemo2.Data.Migrations
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AspNetCoreDemo2.Models.ApplicationUser", b =>
+            modelBuilder.Entity("Cartoonalogue.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id");
 
@@ -65,7 +65,7 @@ namespace AspNetCoreDemo2.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("AspNetCoreDemo2.Models.Cartoon", b =>
+            modelBuilder.Entity("Cartoonalogue.Models.Cartoon", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -91,7 +91,7 @@ namespace AspNetCoreDemo2.Data.Migrations
                     b.ToTable("Cartoons");
                 });
 
-            modelBuilder.Entity("AspNetCoreDemo2.Models.Network", b =>
+            modelBuilder.Entity("Cartoonalogue.Models.Network", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -105,7 +105,7 @@ namespace AspNetCoreDemo2.Data.Migrations
                     b.ToTable("Networks");
                 });
 
-            modelBuilder.Entity("AspNetCoreDemo2.Models.Studio", b =>
+            modelBuilder.Entity("Cartoonalogue.Models.Studio", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -226,9 +226,9 @@ namespace AspNetCoreDemo2.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("AspNetCoreDemo2.Models.Cartoon", b =>
+            modelBuilder.Entity("Cartoonalogue.Models.Cartoon", b =>
                 {
-                    b.HasOne("AspNetCoreDemo2.Models.Studio", "Studio")
+                    b.HasOne("Cartoonalogue.Models.Studio", "Studio")
                         .WithMany("Cartoons")
                         .HasForeignKey("StudioId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -244,7 +244,7 @@ namespace AspNetCoreDemo2.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("AspNetCoreDemo2.Models.ApplicationUser")
+                    b.HasOne("Cartoonalogue.Models.ApplicationUser")
                         .WithMany("Claims")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -252,7 +252,7 @@ namespace AspNetCoreDemo2.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("AspNetCoreDemo2.Models.ApplicationUser")
+                    b.HasOne("Cartoonalogue.Models.ApplicationUser")
                         .WithMany("Logins")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -265,7 +265,7 @@ namespace AspNetCoreDemo2.Data.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("AspNetCoreDemo2.Models.ApplicationUser")
+                    b.HasOne("Cartoonalogue.Models.ApplicationUser")
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using AspNetCoreDemo2.Models;
-using AspNetCoreDemo2.Models.ManageViewModels;
-using AspNetCoreDemo2.Services;
+using Cartoonalogue.Models;
+using Cartoonalogue.Models.ManageViewModels;
+using Cartoonalogue.Services;
 
-namespace AspNetCoreDemo2.Controllers
+namespace Cartoonalogue.Controllers
 {
     [Authorize]
     public class ManageController : Controller

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 
-namespace AspNetCoreDemo2.Models
+namespace Cartoonalogue.Models
 {
     public class Cartoon
     {

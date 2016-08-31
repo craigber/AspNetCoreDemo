@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace AspNetCoreDemo2.Models.ManageViewModels
+namespace Cartoonalogue.Models.ManageViewModels
 {
     public class IndexViewModel
     {

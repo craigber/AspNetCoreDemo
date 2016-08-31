@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace AspNetCoreDemo2.Data.Migrations
+namespace Cartoonalogue.Data.Migrations
 {
     public partial class Networks : Migration
     {
