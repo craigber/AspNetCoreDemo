@@ -1,3 +1,4 @@
 /.vs/**
-/src/Luw/bin/**
-/src/Luw/obj/**
+/bin/**
+/*.ncrunchsolution
+**/obj/**

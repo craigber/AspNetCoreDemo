@@ -22,8 +22,8 @@ namespace Cartoonalogue.Controllers
         // GET: Cartoons
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Cartoons.Include(c => c.Studio).Include(c => c.Network).OrderBy(c => c.Name);
-            return View(await applicationDbContext.ToListAsync());
+            var cartoons = await _context.Cartoons.Include(c => c.Studio).Include(c => c.Network).OrderBy(c => c.Name).ToListAsync();
+            return View(cartoons);
         }
 
         // GET: Cartoons/Details/5
