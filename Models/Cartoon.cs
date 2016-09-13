@@ -23,7 +23,7 @@ namespace Cartoonalogue.Models
         [Display(Name="Date Debuted")]
         public DateTime WhenDebuted { get; set; }
 
-        [Range(0,20)]
+        [Range(0,30)]
         public int Seasons { get; set; }
 
         public Studio Studio { get; set; }

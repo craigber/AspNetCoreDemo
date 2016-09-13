@@ -2,3 +2,5 @@
 /bin/**
 /*.ncrunchsolution
 **/obj/**
+/*.user
+/_NCrunch_AspNetCoreDemo2/*.cache

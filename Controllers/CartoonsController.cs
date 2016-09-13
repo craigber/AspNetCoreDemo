@@ -7,23 +7,34 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cartoonalogue.Data;
 using Cartoonalogue.Models;
+using Microsoft.Extensions.Logging;
 
 namespace Cartoonalogue.Controllers
 {
     public class CartoonsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<CartoonsController> _logger;
 
-        public CartoonsController(ApplicationDbContext context)
+        public CartoonsController(ApplicationDbContext context, ILogger<CartoonsController> logger)
         {
-            _context = context;    
+            _context = context;
+            _logger = logger;
         }
 
         // GET: Cartoons
         public async Task<IActionResult> Index()
         {
-            var cartoons = await _context.Cartoons.Include(c => c.Studio).Include(c => c.Network).OrderBy(c => c.Name).ToListAsync();
-            return View(cartoons);
+            try
+            {
+                var cartoons = await _context.Cartoons.Include(c => c.Studio).Include(c => c.Network).OrderBy(c => c.Name).ToListAsync();
+                return View(cartoons);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to retrieve cartoons in Index page: {ex.Message}");
+                return Redirect("/error");
+            }
         }
 
         // GET: Cartoons/Details/5

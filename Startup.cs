@@ -52,6 +52,7 @@ namespace Cartoonalogue
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddLogging();
             services.AddMvc();
 
             // Add application services.
@@ -72,9 +73,11 @@ namespace Cartoonalogue
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
                 app.UseBrowserLink();
+                loggerFactory.AddDebug(LogLevel.Information);
             }
             else
             {
+                loggerFactory.AddDebug(LogLevel.Error);
                 app.UseExceptionHandler("/Home/Error");
             }
 
