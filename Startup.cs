@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Cartoonalogue.Data;
 using Cartoonalogue.Models;
 using Cartoonalogue.Services;
+using Newtonsoft.Json.Serialization;
 
 namespace Cartoonalogue
 {
@@ -53,7 +54,11 @@ namespace Cartoonalogue
                 .AddDefaultTokenProviders();
 
             services.AddLogging();
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(config =>
+                {
+                    config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
